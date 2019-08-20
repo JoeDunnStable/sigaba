@@ -1,0 +1,1325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="education, preservation, ecm mark ii, sigaba, CCM, combinded cipher machine, navy, cryptography, WW II">
+<meta name="viewport" content="width=device-width">
+<title>ECM MARK 2 and CCM MARK 1 - Part 3</title>
+</head>
+<body bgcolor="#999999">
+<center>
+<table bgcolor="#ffffff" border="1" width="608" cellpadding="5"><tr><td>
+<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">try {var pageTracker = _gat._getTracker("UA-7681738-1");pageTracker._trackPageview();} catch(err) {}</script><script language="JavaScript" type="text/javascript"><!--function menu_goto( menuform ){  var baseurl = '' ;  selecteditem = menuform.url.selectedIndex ;  newurl = menuform.url.options[ selecteditem ].value ;  if (newurl.length != 0) {    location.href = baseurl + newurl ;  }}--></script><table border="0" cellspacing="0" cellpadding="0" align="center"><tr><td><a href="/index.htm"><img src="/img/banner-inner.jpg" alt="HNSA Crest with photos of visitors at the ships." border="0"></a></td></tr></table><table border="0" cellspacing="0" cellpadding="0" align="center"><tr valign="top"><td><form action="/chgoto.php" method="get"><select name="url" size="1" onchange="menu_goto(this.form)"><option selected="selected" value="/name.htm">HNSA Ships to Visit:</option><option value="/location.htm">Listed by Location</option><option value="/name.htm">Listed by Name</option><option value="/class.htm">Listed by Type</option><option value="/edprog.htm">Overnight Programs</option><option value="/hnsamap.htm">Find Ships With a Map</option></select><noscript><input type="submit" value="Go"></noscript></form></td><td><form action="/chgoto.php" method="get"><select name="url" size="1" onchange="menu_goto(this.form)"><option selected="selected" value="/sources.htm">Knowledge Base:</option><option value="/sources.htm">How to Find Ship Info</option><option value="/doc/index.htm">Manuals &amp; Documents</option><option value="/sound/index.htm">Historic Sound &amp; Video</option><option value="/handbook/index.htm">Operations Handbook</option></select><noscript><input type="submit" value="Go"></noscript></form></td><td><form action="/chgoto.php" method="get"><select name="url" size="1" onchange="menu_goto(this.form)"><option selected="selected" value="/intro.htm">About HNSA:</option><option value="/associates.htm">Associate Members</option><option value="/intro.htm">Introduction</option><option value="/activities.htm">Activities</option><option value="/store/index.html">Membership</option><option value="/store/donate.htm">Donate</option><option value="/anchorwatch/index.htm">Anchorwatch Newsletter</option><option value="/positions.htm">Job Postings</option><option value="/awards.htm">Awards</option><option value="/bylaws.htm">Bylaws</option><option value="/mail.htm">Contact HNSA</option><option value="/search.htm">Search hnsa.org</option></select><noscript><input type="submit" value="Go"></noscript></form></td><td><form action="/chgoto.php" method="get"><select name="url" size="1" onchange="menu_goto(this.form)"><option selected="selected" value="/store/index.htm">Support HNSA:</option><option value="/store/index.html">Membership</option><option value="/store/donate.htm">Donate</option></select><noscript><input type="submit" value="Go"></noscript></form></td></tr></table>
+
+
+<center>
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center">
+
+<tr valign="top"><td>
+<p align="center">
+<b>PART III</b>
+<p align="center">
+<b>OPERATION</b></p>
+<p>
+301. <b>REQUIREMENTS.</b>
+<p>
+(a) The following are required for operation of the ECM Mark 2:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) CSP 889 (or 888) complete, in operating condition.
+<p>
+(2) The effective Key List.
+<p>
+(3) The set of Code Wheels upon which the Key List is based.
+</td></tr></table>
+<p>
+302. <b>PREPARATION OF MACHINE.</b>
+
+(a) Prepare the machine for operation in accordance with paragraph 106.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Insure the motor plug and indicator plug are in the proper receptacles as shown in Plate 8.
+<p>
+(2) For motor operation, insure the pawl of the emergency hand drive gear rides in the channel ring (See Plate 8).
+<p>
+(3) Insure the power cord Is plugged into the proper source of power for the type of motor installed in the machine.
+<p>
+(4) The ground connection clip of the power cord should be connected to the metal of the Type 8 Safe Locker or to the ship's structure. This suppresses radio-interference; no difference in the operation of the ECM may be noticed.
+</td></tr></table>
+<p>
+303.<b> KEY LIST.</b>
+<p>
+(a) The effective edition of the Key List is determined by associated communication publications: Crypto-Channel Charts, CSPMs, etc.
+<p>
+(b) Each ECM Mark 2 Key Setting contains:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) The Code Wheel Arrangement.
+<p>
+(2) The Index Setting(s) and corresponding 26-30 Letter Check.
+<p>
+(3) Certain types of Key Lists may, in addition, contain one or more Initial Code Wheel Alignments.
+</td></tr></table>
+<p>
+(c) The following illustration is an example of the Key Setting Form most generally used. It Is based on CSP 1336.
+<p align="center">
+<img src="img/pg25.jpg" alt="
+Code Wheel ) Alphabet Maze: ---A1: 38R 33 35 37R 36
+Arrangement) Stepping Maze: ---St: 32R 34 39R 31 40
+Index ) for SECRET messages: --------SEC: 13-27-36-42-53 C F A N B
+Wheel ) for CONFIDENTIAL messages: --CON: 10-27-34-41-50 H T E W B
+Settings ) for RESTRICTED messages: -RES: 19-28-37-40-58 L O W Y C">
+</p>
+<p>
+(d) The Code Wheel Arrangement consists of ten numbers corresponding to the numbers engraved on the Code Wheels. The Key List omits any letter prefixes or suffixes of the individual Code Wheel designations and in some Key Lists only the final digit may be shown.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) (A) The Code Wheels corresponding to the first group of five numbers listed (generally designated "AL:") are to be Inserted in the Alphabet Maze (the rear row) In order from left to right, as appearing in the Key List.
+</td></tr></table>
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-25-</b><br>
+<hr size="3" align="center"><a name="pg26"></a>
+</td></tr>
+
+<tr valign="top"><td>
+<table width="90%" align="center"><tr valign="top"><td>
+<table width="90%" align="center"><tr valign="top"><td>
+(B) The Code Wheels corresponding to second group d five numbers listed designated "ST:") are to be inserted in the Stepping Maze (the middle row) in order from left to right, as appearing in the Key List.
+</td></tr></table>
+<p>
+(2) The letter "R" (reverse) appearing after a Code Wheel number in the Key List indicates that that particular Code Wheel is to be inserted in the reversed position (i.e., with the engraved alphabet letters appearing upside down to the operator).
+<p>
+(e) (1) The Index Wheels are normally not removed from the Cipher Unit, and their arrangement normally remains the same. Certain Key Lists, however, may call for a different Index Wheel Arrangement, in which case the Index Wheel spindle is removed and the Wheels rearranged in accordance with the "tens" digits d the Index Wheel Arrangement.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(2) Different Index Wheel Settings are given, corresponding to the different secrecy classifications d the messages for which the Key List was designed. Normally there are three Index Settings, one each for SECRET, CONFIDENTIAL and RESTRICTED messages, respectively.
+<p>
+(3) The five letter group following each index Setting is the corresponding 26-30 Letter Check. The five letter group is the encipherment 1 the letter "A" on the 26th to 30th steps inclusive from the Zeroize position using the Code Wheel Arrangement and the Index Wheel Setting given in the Key. THE 26-30 LETTER CHECK SHALL BE MADE EACH TIME CSP 887 IS INSERTED IN THE MACHINE AND AFTER EACH CHANGE OF CODE WHEEL ARRANGEMENT OR INDEX WHEEL SETTING.<b> ITS USE IS MANDATORY.</b>
+</td></tr></table>
+</td></tr></table>
+<p>
+304. <b>CODE WHEEL SET.</b>
+<p>
+(a) The set 1 Code Wheels upon which the Key List is based is shown in the Instructions appearing in the Key List, generally in paragraph 1. A Key List is said to be based upon a particular set d Code Wheels because that particular set was used to obtain the 26-30 Letter Check(s) given in the Key Setting.
+<p>
+305. <b>CODE WHEEL ARRANGEMENT.</b>
+<p>
+(a) To make the Code Wheel Arrangement:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Remove the lid from the cover by lifting straight up.
+<p>
+(2) Loosen the four thumb-screws which secure the Cipher Unit (CSP 887) and remove the Cipher Unit by lifting it straight up from the machine.
+<p>
+CAUTION: Use <b>BOTH HANDS</b> in removing and inserting the Cipher Unit.
+<p>
+(3) Remove the Code Wheel spindles, Insert the Code Wheels in the Cipher Unit in the arrangement and positions shown by the Key. Insert the Code Wheel spindles.
+<p>
+(4) Carefully insert the Cipher Unit into the machine and secure it by means of the four thumb screws.
+<p>
+CAUTION: Use <b>BOTH HANDS</b> in removing and inserting the Cipher Unit.
+</td></tr></table>
+<p>
+306. <b>INDEX WHEEL SETTING.</b>
+<p>
+(a) Rotate, by hand, the Index Wheels until they are set at the positions given in the Key List. The Index Wheels are not moved mechanically and are not to be moved again during the course d enciphering (or deciphering) the particular message.
+<p>
+(b) BE SURE THE INDEX WHEELS ARE IN <b>EXACT</b> ALIGNMENT.
+<p>
+(c) Replace the lid.
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-26-</b><br>
+<hr size="3" align="center"><a name="pg27"></a>
+</td></tr>
+
+<tr valign="top"><td>
+307. <b>ZEROIZING.</b>
+<p>
+(a) The process of turning the Code Wheels so that each one is set with the
+letter "O" opposite
+the white reference lines is called "Zeroizing", and when the Code Wheels
+are all set, it is called
+the "Zeroize position". All processes (except special methods of operation)
+start from the
+Zeroize position.
+<p>
+(b) To Zeroize:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Set the Controller at "R" (Reset). The motor should start as soon as
+the Controller is turned
+away from "O" (OFF).
+<p>
+(2) Set the Zeroizer (the "up and down" switch at the front left) at
+"Zeroize".
+<p>
+(3) Press the "RPT" Key, then the "Blank" Key and hold both keys down. The
+Code Wheels will
+step until each Code Wheel has reached its zeroize position (i.e., with the
+letter "O" opposite the
+white reference line) where it will stop.
+<p>
+NOTE: If each Code Wheel does not step and automatically stop at its
+zeroize position, the cause
+should be ascertained and corrected. See paragraph 506.
+<p>
+(4) When all Code Wheels have stopped at the Zeroize position release the
+Blank and Repeat
+Keys.
+</td></tr></table>
+<p>
+308. <b>26-30 LETTER CHECK.</b>
+<p>
+(a) The 26-30 Letter Check is given as a method 1 checking:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) That the machine is operating properly.
+<p>
+(2) That the Code Wheel Arrangement is correct.
+<p>
+(3) That the Index Setting is correct.
+</td></tr></table>
+<p>
+(b) A correct check assures the operator that the machine is in initially
+good operating
+condition. It does not insure that the machine will continue to function
+perfectly beyond the
+30th step, but failure beyond this point is not likely to occur.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+NOTE: Periodic checks for steps up to 10,000 are given in paragraph 519.
+</td></tr></table>
+<p>
+(c) To make the 26-30 Letter Check.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Make the Code Wheel Arrangement and Index Setting in accordance with
+the Key Setting.
+<p>
+(2) Zeroize.
+<p>
+(3) Set the Zeroizer at "Operate", and set the Controller at "E"
+(Encipher). Reset the counter to
+zero.
+<p>
+(4) Press the "Repeat" Key, then the "Blank" Key, and hold both Keys down
+until the counter approaches twenty-five. Release both Keys, and, by means at the "Blank" Key, step the Code Wheels until the counter reads twenty-five.
+<p>
+(5) Press (Encipher) the letter "A" five times.
+<p>
+(6) The printed encipherment of "A" should check with the values given in
+the Key List.
+</td></tr></table>
+<p>
+(d) Failure to produce the 26-30 Letter Check may indicate:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) An incorrect set of Code Wheels or an error in the Code Wheel
+Arrangement.
+<p>
+(2) An error in the Setting (or Arrangement) of the Index Wheels.
+</td></tr></table>
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-27-</b><br>
+<hr size="3" align="center"><a name="pg28"></a>
+</td></tr>
+
+<tr valign="top"><td>
+<table width="90%" align="center"><tr valign="top"><td>
+NOTE: If an Index Wheel is improperly positioned (i.e. set "half-way") the
+resultant 26-30
+Letter Check will consist of five alike letters).
+<p>
+(3) The machine is not functioning properly. (The most common fault is
+dirty contacts of the
+Code Wheels or Cipher Unit. (See paragraph 403.)
+<p>
+(4) An error In the 26-30 Letter Check given in the Key List. Every
+precaution is taken to
+insure that the correct value is given, however, a simple typographical
+error in the Code Wheel
+Arrangement will give an entirely different 26-30 Letter Check. An error in
+an Index Setting
+will give an erroneous check for that Setting. Four correct letters should
+be accepted. If the 26-30 Letter Check is not obtained, it should be attempted on a second machine
+or with other Code
+Wheels if these are available. Code Wheel and Cipher Unit contacts should
+be cleaned (see
+paragraph 403). If the 26-30 Letter Check cannot be obtained, and the
+operator is satisfied
+that everything is functioning correctly, the 26-30 Letter Check as
+appearing in the Key List
+should be ignored. However, <b>under no condition will the machine be used if
+the 26-30 Letter
+Check so obtained is five alike letters.</b> (See paragraphs 328 and 511).
+</td></tr></table>
+<p>
+(e) THE 26-30 LETTER CHECK SHALL BE MADE EACH TIME CSP 887 IS INSERTED IN
+THE
+MACHINE AND AFTER EACH CHANGE OF CODE WHEEL ARRANGEMENT OR INDEX SETTING.
+<b>ITS USE IS MANDATORY</b>
+<p>
+309. <b>CODE WHEEL ALIGNMENT.</b>
+<p>
+(a) The Code Wheel Alignment is a group of five letters, selected at
+random, to which the Code
+Wheels of the Stepping Maze (the front row of five Code Wheels) are set
+prior to encipherment
+(or decipherment).
+<p>
+(b) This alignment (or reading) of the Code Wheels of the Stepping Maze at
+the start of the
+actual encipherment is transmitted unenciphered as the INTERNAL INDICATOR
+of the message. It
+shall be recorded on the message being enciphered for reference purposes in
+case a verification
+is requested.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+CAUTION: THE CODE WHEEL ALIGNMENT FOR EACH MESSAGE ENCIPHERED BY A
+PARTICULAR
+KEY SETTING MUST BE DIFFERENT. THE SELECTION OF THE LETTERS MUST BE
+ENTIRELY AT
+RANDOM, THE LETTERS "O" AND "Z" MUST NOT BE USED, AND THE LETTERS MUST NOT
+FOLLOW
+A REGULAR SYSTEM OF PROGRESSION. (See paragraph 329).
+</td></tr></table>
+<p>
+(c) To make the Code Wheel alignment:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Zeroize the Code Wheels, (pan. 307). Set the Controller at "R" (Reset)
+and the Zeroizer at
+"Operate". The left (#1) Code Wheel of the Stepping Maze will step one
+letter for each time the
+numeral "1" Key is pressed. Press and release this Key the number of times
+required to align
+#1 Code Wheel to the first letter of the Code Wheel Alignment.
+<p>
+NOTE: While the Code Wheels of the Stepping Maze are being aligned, the
+Code Wheels, of the
+Alphabet Maze will also step.
+<p>
+(2) Similarly align, in succession, the second (#2) Code Wheel with the
+numeral "2" key, the
+third (#3) Code Wheel with the numeral "3" key, etc, until the Code Wheels
+of the Stepping
+Maze are aligned to the letters chosen.
+<p>
+CAUTION: The Code Wheels must be aligned in correct sequence. If any Code
+Wheel is stepped past
+the correct letter or if the Code Wheels are not set in proper sequence,
+the entire process must
+be re-commenced from the zeroize position.
+<p>
+(3) Do not use the Repeat Key in this operation, and avoid a "staccato"
+touch of the numeral
+Keys. It <b>is</b> possible to press the Key and release it quickly enough that
+the Code Wheels of the
+Stepping Maze will step, but the Code Wheels of the Alphabet Maze will not,
+thus resulting in an
+incorrect setting.
+</td></tr></table>
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-28-</b><br>
+<hr size="3" align="center"><a name="pg29"></a>
+</td></tr>
+
+<tr valign="top"><td>
+<table width="90%" align="center"><tr valign="top"><td>
+(4) After the Code Wheels of the Stepping Maze have been set to the Code
+Wheel Alignment, <b>CHECK THE ALIGNMENT OF THE CODE WHEELS OF THE ALPHABET MAZE TO INSURE THAT All FIVE OF THESE WHEELS ARE NOT ALIGNED TO "O"</b>. While the Code Wheels of the
+Stepping Maze are
+being aligned, the Code Wheels of the Alphabet Maze should step in an
+irregular manner. If for
+any reason they do not step, this will be indicated by the fact that all
+five Code Wheels of the
+Alphabet Maze will remain aligned to "O". Therefore, if <b>all five</b> of these
+Code Wheels are found
+on "O" alter the Code Wheel Alignment has been made, the machine is not
+functioning properly.
+In this case, <b>make the 26-30 check</b> and follow instructions in paragraph 308.
+</td></tr></table>
+<p>
+(d) Certain methods of operation require manual alignment of the Code
+Wheels. When this Is
+required, follow Instructions appearing in the Key List.
+<p>
+310. <b>HEADINGS AND INDICATORS.</b>
+<p>
+(a) To type the Heading and Indicators alter having set-up the Code Wheel
+Alignment:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Set the Controller to "P" (Plain) and the Zeroizer to "Operate".
+<p>
+(2) Type the heading, date/time group and any other identification data
+desired.
+<p>
+(3) Advance the tape by means of the space bar, or press the tape release
+tab and pull the tape
+two or three inches.
+<p>
+(4) Type the External Indicator. The External Indicator is given in the Key
+List, Rotating
+Indicator List, Crypto-Channel Charts, etc. Many of the crypto-channels In
+which the ECM is
+used have been assigned several Rotating Indicators for each
+classification. It is important that
+these Indicators be used equally and in random order, and checked off as
+used so that an Indicator
+will not be used again until all the others have been employed, and so that
+an alphabetical or
+other pattern will not be apparent.
+<p>
+(5) Space once and type the Internal Indicator (the letters chosen for the
+Code Wheel Alignment
+see paragraph 309(a)). Space once.
+<p>
+(6) Reset the Counter to zero.
+<p>
+NOTE: Certain Operators may prefer to type the Heading, Indicators, etc.
+before aligning the
+Code Wheels. In this case, perform the operations of this paragraph before
+those of paragraph
+309.
+</td></tr></table>
+<p align="center">
+<b>PROCESS TO BE FOLLOWED FOR ENCIPHERMENT ONLY.</b> -
+<p>
+311. <b>ENCIPHERMENT.</b>
+<p>
+(a) Having aligned the Code Wheels, typed the Heading, External and
+Internal Indicators, etc:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Set the Controller to "E" (Encipher) and the Zeroizer to "Operate".
+Reset the Counter to
+Zero.
+<p>
+(2) Type the text to be enciphered, using the space bar and alphabet keys
+only. Spell out
+numerals. The letter "X" shall normally be used to represent every mark of
+punctuation. When
+necessary for clarity, punctuation marks may be spelled out. The only
+abbreviations for
+punctuation authorized are PAREN, PARA, and QUES. All punctuation shall be
+kept at a minimum
+and used only when necessary to attain clearness. The enciphered text will
+appear on the tape In
+groups of five letters When padding is added at either or both ends to
+conceal a particularly
+short message, one in stereotyped form, or one which has been or may be
+encrypted in another
+system, the use of spaces and other stereotyped padding must be avoided.
+(See Chapter IV,
+<b>Communication Instructions</b> for example of objectionable padding.)
+</td></tr></table>
+<p>
+312. <b>COMPLETING THE MESSAGE.</b>
+<p>
+(a) Set the Controller to "P" (Plain). Leave the Zeroizer at "Operate".
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-29-</b><br>
+<hr size="3" align="center"><a name="pg30"></a>
+</td></tr>
+
+<tr valign="top"><td>
+(b) Note the Counter reading and if necessary, type the letter "X" as many
+times as required to
+produce a counter reading which is a multiple of five. Space once.
+<p>
+(c) Type the Internal Indicator, space once and type the External Indicator.
+<p>
+(d) Advance the tape until all printing is clear of the guide and tear off
+the tape. The tape is now
+ready for pasting on the message blank.
+<p>
+313. <b>EXAMPLE.</b>
+<p>
+(a) The following example illustrates the appearance of a message
+enciphered in this manner. It is based on the sample Key Setting shown in paragraph 303(c). JOROM is assumed to be the CONFIDENTIAL External Indicator.
+<p align="center">
+<img src="img/pg30.jpg" alt="JOROM RBCTS SOMEA OMLLI NSJIK XMIVU WOTET RBCTS JOROM, First and last is external indicator, see paragraph 310a4, next and next to last is internal indicator, see paragraph 309b, Text is the middle five groups"></p>
+<p>
+314. <b>CHECK DECIPHERMENT.</b>
+<p>
+(a) As a check on accuracy, an enciphered message shall be check-deciphered
+prior to
+transmission, preferably by another coding officer, and if possible, on a
+second machine using a
+different set of Code Wheels. In an emergency the check-decipherment may be
+deferred until
+after transmission, but should be completed as soon as possible. THE
+CHECK-DECIPHERMENT IS
+MANDATORY.
+<p align="center">
+<b>PROCESSES COMMON TO DECIPHERMENT ONLY</b></p>
+<p>
+315. <b>DECIPHERMENT.</b>
+<p>
+(a) To prepare the machine for deciphering a message:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Insert the Code Wheels in accordance with the Code Wheel Arrangement
+appearing in the
+Key List.
+<p>
+(2) Set the Index Wheels in accordance with the Index Setting in the Key
+List which corresponds
+to the secrecy classification of the message as determined by the External
+Indicator of the
+Message.
+<p>
+(3) Make the 26-30 Letter Check.
+</td></tr></table>
+<p>
+(b) To decipher the message:</p>
+<table width="90%" align="center"><tr valign="top"><td>
+<p>
+(1) Zeroize.
+<p>
+(2) Set the Zeroizer at "Operate", leave the Controller at "R" (Reset).
+<p>
+(3) Align the #1 (left) Code Wheel of the Stepping Maze to the first letter
+of the Internal
+Indicator of the message by pressing and releasing the numeral "1" Key.
+Similarly, align #2
+Code Wheel to the second letter of the Internal Indicator by means of the
+numeral "2" Key, etc.,
+until all five Code Wheels of the Stepping Maze have been aligned to the
+letters of the Internal
+Indicator.
+<p>
+(4) Set the Controller at "D" (Decipher), leaving the Zeroizer at
+"Operate". Reset the Counter
+to zero.
+</td></tr></table>
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-30-</b><br>
+<hr size="3" align="center"><a name="pg31"></a>
+</td></tr>
+
+<tr valign="top"><td>
+<table width="90%" align="center"><tr valign="top"><td>
+(5) Type the text to be deciphered, ignoring spacing between groups. The
+space bar is
+inoperative while the Controller is set at "D" . The Plain text will appear
+with normal spacing
+between worth, except that "X" will be printed where "Z" would normally
+appear -
+<b>X</b>ERO,<b>X</b>EBRA, RENDE<b>X</b>VOUS etc.
+<p>
+(6) Upon completion of the decipherment advance the tape until the printing
+is clear of the tape
+channel and tear off the tape.
+</td></tr></table>
+<center>
+<p>
+<b>JOINT ARMY-NAVY METHOD </b>
+<br><b>OF OPERATION OF THE ECM</b>
+</center>
+<p>
+316. <b>GENERAL.</b>
+<p>
+(a) The U.S. Army general method of operation of the ECM differs from the
+method in general
+use by the U.S. Navy in that:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) The Code Wheels are aligned by hand.
+<p>
+(2) The Code Wheels of the Alphabet Maze are aligned to the Code Wheel
+Alignment as well as the
+Code Wheels of the Stepping Maze.
+<p>
+(3) The Code Wheel Alignment is enciphered, by means of an additional
+element of the Key
+Setting before it is included in the message as the Internal Indicator.
+</td></tr></table>
+<p>
+(b) The U.S. Army method of operation is used in Joint Army-Navy ECM
+systems.
+<p>
+317.<b> KEY LISTS.</b>
+<p>
+(a) The following illustration is an example of the Key Setting Form most
+generally used in
+Joint Army-Navy Key Lists. It is based on CSP 1336.
+<p>
+</td></tr>
+
+</table><table>
+<tr valign="top"><td align="center">
+<img src="img/pg31.jpg" alt="
+Code Wheel  Alphabet Maze:- CIp/Alp: 31 40 32R 39 37
+Arrangement) Stepping Maze:- Con/Stp: 34 36R 35 38R 33 -
+Index Wheel) for SECRET messages:- SEC 15-24-33-41-58 GDOZZ
+Settings   ) for CONFIDENTIAL messages: - CON  10-21-32-42-54 IFEKA
+Initial Code Wheel Alignment:- Initial Alignment: N R S U W">
+</td></tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="600">
+<tr valign="top"><td>
+(b) The sample Key List illustrated provides for both SECRET and
+CONFIDENTIAL messages. The Key Setting consists of:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) The arrangement of the Code Wheels in the Alphabet Maze (U.S. Army:
+Cipher Rotors)
+designated "Cip/Alp:".
+<p>
+(2) The arrangement of the Code Wheels in the Stepping Maze (U.S. Army:
+Control Rotors)
+designated Con/Stp: -
+<p>
+(3) The setting of the Index Wheels (U.S. Army: Index Rotors) for SECRET
+messages designated
+"SEC" and corresponding 26-30 Letter Check.
+<p>
+(4) The setting of the Index Wheels (U.S. Army: Index Rotors) for
+CONFIDENTIAL messages,
+designated "CON" and corresponding 26-30 Letter Check.
+<p>
+(5) The Alignment of the Code Wheels which is initially used in the process
+of encipherment,
+called the Initial Code Wheel Alignment (U.S. Army: Initial Alignment)
+designated "Initial Alignment".
+</td></tr></table>
+<p>
+(c) The use of the 26-30 Letter Check is not mandatory in the U.S. Army.
+When given in the
+Key List, the use of the 26-30 Letter Check <b>is</b> mandatory In the U.S. Navy
+regardless of the
+particular Key List in use. The 26-30 Letter Check Is made in the same
+manner as in the
+standard U.S Navy general method of operation.
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-31-</b><br>
+<hr size="3" align="center"><a name="pg32"></a>
+</td></tr>
+
+<tr valign="top"><td>
+318. <b>DEFINITIONS.</b>
+<p>
+(a) In this method of operation, two different Code Wheel Alignments are
+used, requiring
+differentiation:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) The <b>MESSAGE</b> CODE WHEEL ALIGNMENT Is the alignment appearing upon the
+Code Wheels at
+the start of the actual encipherment of the message. It consists of five
+letters selected at random.
+<p>
+(2) The <b>INITIAL</b> CODE WHEEL ALIGNMENT is the alignment given in the Key List
+and is used in
+the process of enciphering the Message Code Wheel Alignment.
+</td></tr></table>
+<p>
+(b) The INTERNAL INDICATOR Is the encipherment of the Message Code Wheel
+Alignment, using
+the Initial Code Wheel Alignment at the beginning of the encipherment.
+<p>
+(c) The EXTERNAL INDICATOR is provided for by each Key List.
+<p>
+319. <b>ENCIPHERMENT.</b>
+<p>
+(a) Arrange the Code Wheels in accordance with the Key List and set the
+Index Wheels to the
+Setting corresponding to the classification of the message.
+<p>
+(b) Make the 26-30 Letter Check.
+<p>
+(c) Set the Controller to "P" (Plain) and set the Zeroizer to "Operate".
+Type the Heading,
+Date/Time Group and any identification data desired. Type the EXTERNAL
+INDICATOR and space
+once.
+<p>
+(d) Set the Controller to "E" (Encipher). Align, by hand <b>both</b> the Code
+Wheels of the Alphabet
+Maze <b>and</b> the Code Wheels of the Stepping Maze to the <b>INITIAL</b> CODE WHEEL
+ALIGNMENT given
+in the Key.
+<p>
+(e) Select at random a group of five letters to use as the MESSAGE CODE
+WHEEL ALIGNMENT.
+Make a note of the five letter group on the message being enciphered for
+reference purposes in
+case a verification is requested.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+CAUTION: THE MESSAGE CODE WHEEL ALIGNMENT FOR EACH MESSAGE ENCIPHERED BY A
+PARTICULAR KEY SETTING MUST BE DIFFERENT. THE SELECTION OF THE LETTERS MUST
+BE
+ENTIRELY AT RANDOM, THE LETTERS "O" AND "Z" MUST NOT BE USED, AND THE
+LETTERS MUST
+NOT FOLLOW A REGULAR SYSTEM OF PROGRESSION. (See paragraph 329.)
+</td></tr></table>
+<p>
+(f) Type (Encipher) the Message Code Wheel Alignment. The resultant
+encipherment is the
+INTERNAL INDICATOR.
+<p>
+(g) Align, by hand, <b>both</b> the Code Wheels of the Alphabet Maze and the Code
+Wheels of the
+Stepping Maze to the letters of the Message Code Wheel Alignment (the five
+letters selected at
+random (paragraph (e) above.)
+<p>
+(h) Reset the counter to zero.
+<p>
+(i) Type the text to be enciphered, using the space bar and alphabet keys
+only. Spell out
+numerals. The letter "X" shall normally be used to represent every mark of
+punctuation. When
+necessary for clarity, punctuation marks may be spelled out. The only
+abbreviations for
+punctuation authorized are PAREN, PARA, and QUES. All punctuation shall be
+kept at a minimum
+and used only when necessary to attain clearness. The enciphered text will
+appear on the tape in
+groups of five letters. When padding is added at either or both ends to
+conceal a particularly
+short message, one in stereotyped form, or one which has been or may be
+encrypted in another
+system, the use of spaces and other stereotyped padding must be avoided.
+(See Chapter IV,
+<b>Communication Instructions</b> for example of objectionable padding.)
+<p>
+(j) When the text has been completely enciphered, note the counter reading.
+If it is not a
+multiple of five, set the Controller to "P" (Plain) and type the letter "X"
+as many times as are
+needed to produce a reading which is a multiple of five. Space once. Set
+the Controller back to
+"E" (Encipher).
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-32-</b><br>
+<hr size="3" align="center"><a name="pg33"></a>
+</td></tr>
+
+<tr valign="top"><td>
+(k) Align, by hand, both the Code Wheels of the Alphabet Maze and the Code
+Wheels of the
+Stepping Maze to the Initial Code Wheel Alignment. Type (Encipher) the
+Message Code Wheel
+Alignment. Check the resultant encipherment with the first Internal
+Indicator (paragraph (f).)
+They must be the same.
+<p>
+(l) Set the Controller to "P" (Plain). Type the External Indicator.
+<p>
+(m) Advance the tape until all printing is clear of the tape channel and
+tear off the tape.
+<p>
+320. <b>EXAMPLE.</b>
+<p>
+(a) The following example represents the appearance of a message enciphered
+In this manner. It
+is based on the sample-Key Setting shown in paragraph 317 (a). QYBAL Is
+assumed to be the
+CONFIDENTIAL External Indicator.
+<p align="center">
+<img src="img/pg33.jpg" alt="JQYBAL VELMU YJZAW VLWHW ONQPS VNPWB UTAAX VELMU QYBAL, First and last is external indicator, see paragraph 318c, next and next to last is internal indicator, see paragraph 319f, Text is the middle five groups"></p>
+<p>
+321. <b>DECIPHERMENT.</b>
+<p>
+(a) Arrange the Code Wheels in accordance with the Key List and set the
+Index Wheels in
+accordance with the classification of the message.
+<p>
+(b) Make the 26-30 Letter Check.
+<p>
+(c) Turn the Controller to "D" (Decipher) and set the Zeroizer to
+"Operate". Align, by hand,
+<b>both</b> the Code Wheels of the Alphabet Maze <b>and</b> the Code Wheels of the
+Stepping Maze to the <b>Initial</b>
+Code Wheel Alignment given in the Key.
+<p>
+(d) Type (decipher) the Internal Indicator. The resultant decipherment is
+the Message Code
+Wheel Alignment.
+<p>
+(e) Advance the tape until the portion of the tape containing the Message
+Code Wheel Alignment
+is clear of the tape channel. (These five letters must be destroyed after
+use and must <b>not</b> appear
+on the delivery copy of the message).  -
+<p>
+(f) Set the Controller to "P" (Plain) and type any identification data
+desired. Set the Controller
+to "D" (Decipher) and set the Counter to zero.
+<p>
+(g) Align, by hand, <b>both</b> the Code Wheels of the Alphabet Maze <b>and</b> the Code
+Wheels of the
+Stepping Maze to the Message Code Wheel Alignment (the five letter
+decipherment on the tape
+(paragraph (d)).
+<p>
+(h) Type the text to be deciphered ignoring spacing between groups. The
+plain text will appear
+with normal spacing between words.
+<p>
+(i) Tear off that portion of the tape containing the Message Code Wheel
+Alignment and destroy by
+burning.
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-33-</b><br>
+<hr size="3" align="center"><a name="pg34"></a>
+</td></tr>
+
+<tr valign="top"><td>
+<p align="center"><b>PARALLEL OPERATION</b>
+</p><p>
+322. <b>PARALLEL OPERATION.</b>
+<p>
+(a) Parallel operation of the ECM is not recommended except in unusual
+circumstances.
+Experience has shown that the reliable operating speed of the parallel
+arrangement is far below
+that of a single machine. The two machines tend to "out of step" if this
+speed is exceeded. For this
+reason, and because general use of parallel operation would require a
+number of machines far in
+excess of the number available, parallel operation should be kept at a
+minimum.
+<p>
+(b) The following instructions for Parallel Operation are given for
+instances in which its use is
+authorized.
+<p>
+323. <b>PREPARATION OF MACHINES FOR PARALLEL OPERATION.</b>
+<p>
+(a) Both machines must be equipped with motors designed for operation on
+the same type power.
+<p>
+(b) To prepare the machine for parallel operation:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Determine which machine has the higher speed;
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(A) Prepare each machine for individual operation.
+<p>
+(B) Set the Controller of both machines to "R", and reset the Counters to
+zero.
+<p>
+(C) Press both "Repeat" Key Levers. Simultaneously press both "Blank"
+Keylevers, and hold
+them down approximately one minute. Release the Keys simultaneously, and
+turn both machines
+off.
+<p>
+(D) Note the Counter readings. The machine with the higher Counter reading
+should be used as
+<b>the secondary</b> machine (to the right), the machine with the lower Counter
+reading should be
+used as the <b>master</b> machine (to the left).
+</td></tr></table>
+<p>
+(2) Disconnect the power cord of the secondary machine from the source of
+power. (Secure it in
+manner which will prevent accidental re-connection).
+<p>
+(3) Replace the fuses in the master machine with 10 ampere fuses. (This is
+necessary because
+5 ampere fuses are insufficient to start both motors at the same time. Five
+(5) ampere fuses
+will work, <b>if</b> the master machine is always started first, <b>then</b> the
+secondary machine.
+<p>
+(4) Place the secondary machine to the right of the master machine. Using
+the Connecting Cable
+(ENG 111) connect from the "Output" of the master machine to the "Input of
+the secondary
+machine. The machines are now ready for parallel operation.
+</td></tr></table>
+<p>
+324. <b>OPERATING PROCEDURE.</b>
+<p>
+(a) Set the Zeroizers of both machines at "Zeroize" and both Controllers at
+"R" (Reset).
+<p>
+(b) (1) Zeroize the master machine according to previous instructions.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(2) Set the master machine Zeroizer at "Operate" and make the Code Wheel
+Alignment from its
+own keyboard in the normal manner.
+<p>
+(3) Set the Zeroizer to "Zeroize".
+</td></tr></table>
+<p>
+(c) Zeroize the secondary machine and make the Code Wheel Alignment from
+its keyboard in the
+normal manner.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+CAUTION: Both machines cannot be set up from a single keyboard.
+</td></tr></table>
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-34-</b><br>
+<hr size="3" align="center"><a name="pg35"></a>
+</td></tr>
+
+<tr valign="top"><td>
+(d) Set both machines to "P" (Plain), with the Zeroizers at "Operate" and
+operate the space bar
+once.* Type the plain text of the Heading and any other pertinent data. If
+it is desired that the
+secondary machine not print this matter, turn the Controller to "Off"
+position.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+*NOTE; It is necessary to operate the space bar only on <b>some</b> machines. The
+purpose of this
+operation is to clear any stop-pins unlatched on the Printer.
+</td></tr></table>
+<p>
+(e) Set the master machine to "Encipher" and the secondary machine to
+"Decipher". Reset both
+counters to zero and proceed with the encipherment. The master machine will
+print the
+enciphered text, the secondary machine will print the decipherment of the
+enciphered text.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+NOTE: Always use the master machine for encipherment. In so doing, the
+electrical impulses of
+the encrypted text travel through the alphabet maze of the secondary
+machine and are
+deciphered, producing a decipherment of the encipherment. If the right hand
+machine is used as
+a master, the left hand machine will act merely as a printer indicating
+only the keylever which
+has been depressed on the right hand machine. No check on the correctness
+of the enciphered text
+will result unless the machines are used in the manner indicated.
+</td></tr></table>
+<p>
+325. <b>EMERGENCY OPERATION.</b>
+<p>
+(a) To prepare the machine for operation on an emergency power supply of 24
+volts, DC:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Disconnect the power lead.
+<p>
+(2) Interchange the position of the motor plug (designated "DC" or "AC",
+depending upon the
+type of motor) and the indicator plug so that the pointer of the indicator
+plug points to "24 DC".
+See Plate 8c.
+<p>
+(3) Raise the pawl from the channel ring and slip the channel ring to the
+outside, allowing the pawl to engage the ratchet (See Plate 8c).
+<p>
+(4) Connect the power lead to a source of 24 volts direct current. (See
+para. 211(d).)
+<p>
+(5) Proceed with the normal operation of the machine except, for each Key
+lever pressed,
+completely depress the emergency hand drive lever once. Make a full down
+stroke for each letter
+and permit the motor to stop before pressing the next letter. Do <b>not</b> "pump
+the handle".
+Emergency operation cannot be hurried; it is a slow process.
+<p>
+CAUTION: HOLD THE KEYLEVER DOWN DURING THE ENTIRE TIME NECESSARY TO
+COMPLETE THE
+CYCLE. This is most important when making the Code Wheel Alignment.
+</td></tr></table>
+<p>
+(b) When operating with low voltage it is ABSOLUTELY ESSENTIAL that the
+contacts of the Code
+Wheels and Cipher Unit be clean. (See paragraph 403.)
+<p>
+(c) To return the machine to normal operation:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Lift the pawl and slide the channel ring under the pawl and allow the
+pawl to engage the
+channel of the ring. (See Plate 8.)
+<p>
+(2) Interchange the position of the Motor plug and Indicator plug, so that
+the Indicator plug
+points to "115" volts. (See Plate 8.)
+<p>
+(3) Connect the power lead to the normal source of power.
+</td></tr></table>
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-35-</b><br>
+<hr size="3" align="center"><a name="pg36"></a>
+</td></tr>
+
+<tr valign="top"><td>
+326. <b>CORRECTION OF ERRORS.</b>
+<p>
+(a) During encipherment, if the wrong keylever is pressed, that letter only
+will be in error.
+The decipherment will appear exactly as typed - with a one letter garble. It is
+essential that no
+attempt be made to correct the actual error other than a complete re-encipherment. The
+error may be
+ignored, and if the check-decipherment is intelligible without confusion,
+leave the one-letter
+garble in the text. If desired, the word "ERROR" or the letter "E" repeated
+several times, may be
+enciphered followed by the last correct word, proceeding with the
+encipherment from that
+point.
+<p>
+(b) During decipherment, if the wrong keylever Is pressed, that letter only
+will be in error. If
+the error is ignored and the decipherment continued, only a one letter
+garble will result, and
+the text should be easily completed by inspection.
+<p>
+(c) If the check-decipherment reveals the omission of entire words or
+phrases, the best
+practice is to re-encipher the text in its entirety.
+<p>
+(d) In order to check the encipherment or decipherment of a certain portion
+of the text or to
+recommence decipherment at the point at which a garble occurs:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Check the first letter of the portion of the text to be checked and
+determine the interval
+from the beginning of the encipherment (or decipherment) to this letter.
+<p>
+NOTE: It is recommended that the check be started one or two groups (five
+or ten letters) before
+the point of the garble to insure that the starting point has been
+correctly determined.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(A) On encipherment, the interval is difficult to determine because it is
+necessary to count each
+letter of plain text plus the spaces, assuming the original typist did not
+make errors. If the
+portion to be checked has just been typed, the counter reading may be noted
+and the interval
+"counted back" and one added to the number thus obtained.
+<p>
+(B) On decipherment, the interval may be determined from the regular
+arrangement of the
+cipher groups.
+</td></tr></table>
+<p>
+(2) Zeroize and align the Code Wheels.
+<p>
+(3) Set the Controller at "E" (Encipher) or "D" (Decipher), according to
+the process desired,
+leaving the "Zeroizer" at "Operate". Reset the Counter to zero.
+<p>
+(4) Press the "Repeat" Keylever, then the "Blank" keylever and allow the
+Code Wheels to step
+until the counter reading approaches the interval previously determined,
+then release both
+Keylevers. Using the "Blank" keylever step the Code Wheels until the
+Counter reading is one less
+than the recorded interval.
+<p>
+NOTE: The paper tape feed can be suppressed by holding the tape release tab
+down while the Code
+Wheels are being stepped with the "Blank" keylever.
+<p>
+(5) Record the alignment of <b>all</b> Code Wheels and the Counter reading.
+<p>
+(6) Proceed with the encipherment (or decipherment) from the letter
+previously checked.
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(A) If the printed text Is garbled, reset the Code Wheels, by hand, to the
+alignment previously
+recorded (paragraph (5) above). Proceed with the encipherment (or
+decipherment) but begin
+with one letter previous to the letter checked.
+<p>
+(B) If the printed text is still garbled, reset the Code Wheels, by hand,
+to the alignment
+previously recorded and proceed with the encipherment (or decipherment) but
+begin one letter
+after the letter checked.
+<p>
+(C) If the text Is still garbled, try adding two letters then subtracting
+two letters, etc. until five letters plus or minus have been tried. Failure of correct text to
+appear indicates than an
+incorrect alignment has been used, the machine is not functioning properly,
+or that an error
+has been made in computing the interval.
+</td></tr></table>
+</td></tr></table>
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-36-</b><br>
+<hr size="3" align="center"><a name="pg37"></a>
+</td></tr>
+
+<tr valign="top"><td>
+327. <b>GARBLES.</b>
+<p>
+(a) Should decipherment fail completely:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) If the letters of the two Internal Indicators at the beginning and end
+of the message are not
+identical, try the various combinations until an alignment is obtained that
+will produce
+intelligible text.
+<p>
+(2) The External Indicator of one classification may have been used for the
+message, but an
+Index Setting for another classification may have been used. Try all the
+Index Settings given in
+that particular Key Setting.
+<p>
+(3) The Key Setting for the previous or following day may have been used.
+<p>
+(4) The enciphering machine may have been defective or the enciphering
+operator may have
+failed to make the 26-30 Letter Check. Try the process given in paragraph
+328.
+<p>
+(5) When using the Joint Army-Navy method of operation one additional
+garble is possible. If
+the operator should select a "Z" in violation of paragraph 319 (e) the
+Internal Indicator will
+decipher with an "X" in the Message Code Wheel Alignment Instead of the
+"Z". In this case, try
+substituting a "Z" for an "X" in the Message Code Wheel Alignment.
+<p>
+A MESSAGE WHOLLY UNDECIPHERABLE MUST BE TRIED BY THE PROCESS GIVEN IN THE
+NEXT
+PARAGRAPH BEFORE A SERVICE IS REQUESTED.
+</td></tr></table>
+<p>
+328. <b>SPECIAL CHECKING PROCESS FOR "SIMPLE-SUBSTITUTION".</b>
+<p>
+(a) A mono-alphabetical ("simple-substitution") cipher capable of being
+solved by an amateur cryptanalyst can be produced by the ECM if certain operating procedures are
+not faithfully
+followed by the operator.
+<p>
+(b) The primary cause of the production of a simple substitution cipher is
+the mis-alignment
+of an Index or a Code Wheel. If an Index Wheel is not accurately positioned, the
+stepping control
+circuits to the Code Wheels of the Alphabet Maze will be broken, and the
+Code Wheels of the
+Alphabet Maze will not step. If a Code Wheel of the Stepping Maze is not
+accurately positioned
+(generally in Joint Army-Navy method of operation wherein the Code Wheels
+are aligned by
+hand) the stepping circuits will also be broken. The resultant encipherment
+in either case will
+be a "simple-substitution".
+<p>
+(c) The operator can definitely insure against the production of a simple
+substitution cipher by
+faithfully performing the 26-30 Letter Check, and, when using the U.S. Navy
+general method of
+operation, checking the alignment of the Code Wheels of the Alphabet Maze
+after making the Code
+Wheel Alignment to see that all five are not aligned to "O". A machine
+capable of producing a
+"simple-substitution" encipherment will not give the correct 26-30 Letter
+Check, nor will the
+check-decipherment, if properly performed, decipher.
+<p>
+(d) When a message is wholly undecipherable, in order to check the
+possibility of its having
+been enciphered on a machine improperly adjusted:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Prepare the machine for operation in the normal manner, except turn any
+Index Wheel
+between two numbers or remove it entirely.
+<p>
+(2) Set the Controller at "D" (Decipher) and set the Zeroizer to "Operate".
+Reset the counter to
+zero.
+<p>
+(3) (A) If the message was enciphered by the standard U.S. Navy method of
+operation, zeroize
+the Code Wheels, and leave them aligned to 00000.
+</td></tr></table>
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-37-</b><br>
+<hr size="3" align="center"><a name="pg38"></a>
+</td></tr>
+
+<tr valign="top"><td>
+<table width="90%" align="center"><tr valign="top"><td>
+<table width="90%" align="center"><tr valign="top"><td>
+(B) If the message was enciphered using the Joint Army-Navy method of
+operation, align by
+hand, the Code Wheels of the Alphabet Maze to the Initial Code Wheel
+Alignment and decipher the
+Internal Indicator to produce the Message Code Wheel Alignment. Align, by
+hand, the Code
+Wheels of the Alphabet Maze to the resultant Message Code Wheel Alignment.
+(The Code Wheels
+of the Alphabet Maze must not step during this process.)
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+NOTE: For either method of operation, the Code Wheels of the Stepping Maze
+may be ignored
+entirely since the mis-alignment of the Index Wheel prevents these Code
+Wheels from
+controlling the stepping of the Code Wheels in the Alphabet Maze. For this
+reason, when using
+either method of operation, a Code Wheel Alignment need not be made on the
+Code Wheels of the
+Stepping Maze.
+</td></tr></table>
+</td></tr></table>
+(4) Type (decipher) the message. While deciphering, the Code Wheels of the
+Alphabet Maze
+must remain aligned to the original Code Wheel Alignment (00000 if using
+standard Navy
+method, or if using the Joint Army-Navy method, the Message Code Wheel
+Alignment). If they do
+not, it indicates the Index Wheel is making contact.
+<p>
+(5) RESET THE INDEX WHEEL TO THE CORRECT ALIGNMENT
+</td></tr></table>
+(e) If the message deciphers properly it indicates the enciphering machine
+was operating
+incorrectly. The deciphering activity should report, as opportunity
+affords, to the enciphering
+activity with information to the Chief of Naval Operations any message so
+deciphered.
+<p>
+(f) The deciphering activity must not relay the cipher text of a message
+enciphered in the above
+manner, but should re-encipher the message. Prior to re-encipherment, the
+order of sentences
+should be changed. Different indicators and Date-Time Group should be used,
+and other standard
+re-encipherment practices followed to prevent linkage with the original
+message.
+<p>
+(g) The seriousness of such an encipherment cannot be over-emphasized. A
+simple substitution
+can result only through carelessness of the operator. THIS CARELESSNESS IS
+INEXCUSABLE. The
+ECM Mark 2, like any machine, is not fool-proof. Common sense and faithful
+observance of
+instructions on the part of the operator are essential.
+<p>
+(h) <b>OPERATORS MUST TAKE CARE TO USE THE ECM PROPERLY.</b>
+<p>
+329. <b>RANDOM SELECTION OF CODE WHEEL ALIGNMENTS.</b>
+<p>
+(a) Code Wheel Alignments <b>must</b> be selected at random and any definite
+system of progression
+must <b>not</b> be followed. Random selection of Code Wheel Alignments is
+imperative to insure the
+greatest possible variety of starting points. A Code Wheel Alignment which
+is not selected at
+random is likely to be repeated using the same Key Setting. Two messages
+with the same starting
+point is a condition sought by cryptanalysts.
+<p>
+(b) There are several methods which may be employed to produce random Code
+Wheel
+Alignments:
+<p></p>
+<table width="90%" align="center"><tr valign="top"><td>
+(1) Cipher groups may be selected at random from a group of messages.
+<p>
+(2) An average of one out of ten letters may be deleted from the cipher
+groups of a message, and
+the letters used consecutively.
+<p>
+(3) Poker chips or cards may be labled with the letters of the alphabet and
+five selected at
+random for each setting.
+<p>
+(4) A cipher machine may be prepared for encipherment using a random Code
+Wheel
+Arrangement and the keys depressed at random or a cipher message typed.
+Letters of the cipher
+groups thus produced may be used consecutively for Code Wheel Alignments.
+</td></tr></table>
+<p>
+(c) In each case, the letters "O" and "Z" should be deleted to prevent
+accidental use.
+<p>
+330. <b>MESSAGE LENGTH.</b>
+<p>
+(a) Very long messages to be enciphered with the ECM Mark 2 should be
+broken up into parts,
+each of which uses a different Code Wheel Alignment. Each part should not
+exceed three-hundred
+and fifty (350) groups in length.
+<p>
+(b) This limitation on message length is imposed, for convenience in
+traffic handling and for uniformity of
+procedure between the services. The cryptographic security of the ECM is
+not involved.
+</td></tr>
+
+<tr valign="top"><td>&nbsp;</td></tr>
+<tr valign="top"><td align="center"> <b>-38-</b><br>
+<hr size="3" align="center">
+</td></tr>
+
+
+</table>
+
+<table align="center">
+<tr>
+<td align="center" width="100" valign="top"><a href="sec02.htm"><img src="img/previous.gif" alt="Previous section" border="0" height="30" width="30"><br>Previous Section</a></td>
+
+<td align="center" width="100" valign="top"><a href="index.htm"><img src="img/home.gif" alt="ECM Home Page" border="0" height="30" width="30"><br>ECM Home Page</a></td>
+
+<td align="center" width="100" valign="top"><a href="sec04.htm"><img src="img/next.gif" alt="Next section" border="0" height="30" width="30"><br>Next section</a></td>
+</tr>
+</table>
+</center>
+
+
+<table border="0" cellspacing="0" cellpadding="0" width="600">
+<tr><td align="center">
+<p>&nbsp;</p>
+<p>
+<font size="-1">
+Copyright &copy; 1997-2007, <a href="/index.htm">Historic Naval Ships Association</a>.
+<br>All Rights Reserved.
+<br><a href="/notices.htm">Legal Notices and Privacy Policy</a>
+<br>Version 3.00</font></p>
+</td></tr></table>
+</td></tr></table>
+</center>
+</body>
+</html>

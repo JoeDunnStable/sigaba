@@ -1,0 +1,14 @@
+
+*~
+
+*.bak
+*.old
+
+build*/*
+
+output*/*
+
+*.xcodeproj/*
+
+DerivedData
+
