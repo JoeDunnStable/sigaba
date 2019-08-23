@@ -164,6 +164,7 @@ int main(int argc, const char* const argv[]) {
   using namespace boost::program_options;
   bool encrypt{false}, decrypt{false}, trace(false);
   string cipherOrder, controlOrder, indexOrder;
+  bool NavyInit(false);
   string cipherPos, controlPos, indexPos;
   string machine_str;
   string input_text, input_file;
@@ -179,6 +180,7 @@ int main(int argc, const char* const argv[]) {
   ("controlOrder",value<string>(&controlOrder)->default_value("5N6N7N8N9N"),"control rotors e.g. 5N6R7N8R9N")
   ("indexOrder",value<string>(&indexOrder)->default_value("0N1N2N3N4N"),"index rotors e.g. 0N1R2N3R4N")
   ("machine",value<string>(&machine_str)->default_value("CSP889"),"machine type: CSP889, CSP2900, or CSPNONE")
+  ("navyInit", bool_switch(&NavyInit)->default_value(false), "use the Navy initialiation procedure.  CipherPos is unused or overriden")
   ("cipherPos",value<string>(&cipherPos)->default_value("OOOOO"),"cipher rotors pos e.g. AAAAA")
   ("controlPos",value<string>(&controlPos)->default_value("OOOOO"),"control rotors pos e.g. AAAAA")
   ("indexPos",value<string>(&indexPos)->default_value("00000"),"index rotors pos e.g. 01234")
@@ -224,15 +226,22 @@ int main(int argc, const char* const argv[]) {
   
   // Create sigaba cipher machine object
   Sigaba sigaba(cipherOrder, controlOrder, indexOrder, machine);
+  
+  if (trace)
+    sigaba.start_trace();
    
   if (!validate_pos(cipherPos, controlPos, indexPos))
     return 1;
     
   // set the inital position of the rotors
-  sigaba.set_cipher_pos(cipherPos);
-  sigaba.set_control_pos(controlPos);
   sigaba.set_index_pos(indexPos);
-    
+  if (NavyInit)
+    sigaba.navy_init(controlPos);
+  else {
+    sigaba.set_cipher_pos(cipherPos);
+    sigaba.set_control_pos(controlPos);
+  }
+  
   ifstream f_in;
   bool file_in = (vm.count("input"));
   if (file_in)

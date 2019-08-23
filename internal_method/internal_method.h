@@ -42,7 +42,7 @@ using std::ostream;
 using std::mt19937;
 using std::uniform_int_distribution;
 
-// check whether a string or vector of ints satisfies the internal method
+/// check whether a string or vector of ints satisfies the internal method
 class Checker {
 public:
   /// consructor from string of letters and char base
@@ -59,13 +59,14 @@ public:
   friend ostream& operator<< (ostream& os, Checker chk) {
     for (int i=0; i<chk.diff_used.size(); ++i) {
       if (chk.diff_used[i] != 1)
-        os << "diff " << i << " used " << chk.diff_used[i] << " times." << endl;
+        os << "// diff " << i << " used " << chk.diff_used[i] << " times." << endl;
     }
-    os << "permuatation is "<< (chk.permutation_ok ?"OK":"Bad")
+    os << "// permuatation is "<< (chk.permutation_ok ?"OK":"Bad")
     << ", discrepancy: " << chk.score << endl;
     return os;
   }
   
+  /// calculate a mod b with 0<= result < b.
   static int mod(int a, int b) {
     int out = a % b;
     if (out < 0)
@@ -114,10 +115,16 @@ private:
   
 };
 
+/// Generate random rotor wiring using internal method
 class InternalMethod {
 public:
+  
+  /// construct wiring using backtracking algorithm making
+  /// random choices at each stage
   template<class URNG>
-  InternalMethod(int size, URNG& gen) : size(size) {
+  InternalMethod(int size,    ///< the size of the rotor
+                 URNG& gen    ///< the uniform random number generator
+                 ) : size(size) {
     
     vector<int> chosen(size);
     vector<int> available0(size);
@@ -199,6 +206,7 @@ public:
     }
   } // InternalMethod
   
+  /// calculate a mod b using with 0<= result < b
   static int mod(int a, int b) {
     int out = a % b;
     if (out < 0)
@@ -206,10 +214,12 @@ public:
     return out;
   }
   
+  /// return the resulting permutation
   vector<int> get_perm() {
     return perm;
   }
   
+  /// transfers various statistics about the construction to a ostream
   friend ostream& operator<< (ostream& os, const InternalMethod& im) {
     if (im.j != im.size-1) {
       os << "j = " << im.j << " indicating failure." << endl

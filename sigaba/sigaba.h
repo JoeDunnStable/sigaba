@@ -330,6 +330,23 @@ public:
     return filter_out(direction, out);
   }
   
+  /// Initialize the control rotors one step at a time while cycling
+  /// the cipher rotors
+  void navy_init(string control_pos) {
+    zeroize();
+    for (int j = 0; j<5 ; ++j) {
+      int target = control_pos[j]-'A';
+      while (control_rotors.at(j).pos != target) {
+        step_cipher_rotors();
+        control_rotors.at(j).rotate(1) ;
+        if (trace) {
+          cout << get_cipher_pos() << " " << get_control_pos() << endl;
+        }
+      }
+    }
+  }
+  
+  /// print the machine state to an ostream
   friend   ostream& operator<< (ostream& os, Sigaba sig) {
     os << "Cipher Order:     ";
     for (int i=0; i<5; ++i)
