@@ -258,6 +258,7 @@ public:
       case CSP2900:
         return "CSP2900";
       case CSPNONE:
+      default:
         return "CSPNONE";
     }
   }

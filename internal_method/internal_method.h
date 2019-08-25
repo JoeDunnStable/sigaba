@@ -41,6 +41,8 @@ using std::ostream;
 #include <random>
 using std::mt19937;
 using std::uniform_int_distribution;
+#include <algorithm>
+using std::find;
 
 /// check whether a string or vector of ints satisfies the internal method
 class Checker {
