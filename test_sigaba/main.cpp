@@ -67,12 +67,22 @@ int main(int argc, const char * argv[]) {
   
   
   // first check the wiring
-  for (int i=0; i<BigRotor::wiring_strs.size(); ++i)
+  for (int i=0; i<Sigaba::left_wiring.size(); ++i) {
+    vector<int> wiring(26);
+    for (int j=0; j<26; ++j)
+      wiring.at(j)= Sigaba::left_wiring.at(i).at(j);
+    Checker chk(wiring);
     cout << setw(12) << "Big Rotor " << setw(3) << i << ": " << endl
-    << Checker(BigRotor::wiring_strs.at(i), 'A');
-  for (int i=0; i<IndexRotor::wiring_strs.size(); ++i)
+    << chk;
+  }
+  for (int i=0; i<Sigaba::index_wiring.size(); ++i) {
+    vector<int> wiring(10);
+    for (int j=0; j<10; ++j)
+      wiring.at(j) = Sigaba::index_wiring.at(i).at(j);
+    Checker chk(wiring);
     cout << setw(12) << "Index Rotor " << setw(3)<< i << ": " << endl
-    << Checker(IndexRotor::wiring_strs.at(i), '0');
+    << chk;
+  }
   
   string cipherOrder = getenv("CipherOrder")==NULL ? "" : getenv("CipherOrder");
   if (cipherOrder.length() != 10) {

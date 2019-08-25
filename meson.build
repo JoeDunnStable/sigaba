@@ -1,5 +1,5 @@
 project('sigaba', 'cpp', default_options : ['cpp_std=c++11'],
-         version : '1.1')
+         version : '1.2')
 
 #Boost header and some libraries.
 #I had to define BOOST_ROOT to get this to work.

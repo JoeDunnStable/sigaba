@@ -94,17 +94,14 @@ template<int N>
 class Rotor {
 public:
   /// constructor given wiring array and orientation
-  Rotor(array<int, N> wiring,  ///< wiring array N int from 0-N
-        bool reversed          ///< is rotor reversed
+  Rotor(const array<int, N>& left_wiring,
+        const array<int, N>& right_wiring,///< wiring array N int from 0-N
+        bool reversed,           ///< is rotor reversed
+        int wiring_num           ///< wiring number for display
         ) :
-  reversed(reversed), pos(0)
-  {
-    left = wiring;
-    for (int i=0; i<N; ++i) {
-      right[left[i]] = i;
-    }
-    pos=0;
-  }
+  pos(0), reversed(reversed), wiring_num(wiring_num),
+  left(left_wiring), right(right_wiring){}
+  
   /// encrypt one integer,  Used by cipher and index rotors
   int encrypt(int in  ///< integer to encrypt from 0-25
               ) {
@@ -137,73 +134,20 @@ public:
   }
   
   bool reversed;
+  
+  friend ostream& operator<< (ostream& os, Rotor<N>& r) {
+    os << r.wiring_num << (r.reversed ? 'R' : 'N');
+    return os;
+  }
+  
+  int wiring_num;
 
 private:
-  array<int, N> left;
-  array<int, N> right;
+  const array<int, N>& left;
+  const array<int, N>& right;
 };  //Rotor
 
-/// class for both cipher rotors and contol rotors
-class BigRotor : public Rotor<26>  {
-public:
-  /// constructor given wiring number and orientation
-  BigRotor(int wiringnum,  ///< number of string from wiring str table
-           bool reversed   ///< is rotor reversed
-          ) : wiringnum(wiringnum),
-              Rotor<26> (str2wiring(wiringnum), reversed){}
-  
-  static const vector<string> wiring_strs;
-  
-  friend ostream& operator<< (ostream& os, BigRotor& r) {
-    os << r.wiringnum << (r.reversed ? 'R' : 'N');
-    return os;
-  }
-  
-  int wiringnum;
 
-private:
-  static array<int, 26> str2wiring(int num) {
-    if (num <0 || num > wiring_strs.size())
-      num=0;
-
-    array<int, 26> wiring;
-    for (int i=0; i<26; ++i)
-      wiring[i] = wiring_strs[num][i] - 'A';
-    return wiring;
-    
-  }
-  
-};
-
-/// class for index rotors
-class IndexRotor : public Rotor<10> {
-public:
-  /// constructor given wiring number and orientation
-  IndexRotor(int wiringnum, bool reversed) :
-    wiringnum(wiringnum),
-    Rotor<10>(str2wiring(wiringnum), reversed){}
-  
-  static const vector<string> wiring_strs;
-  
-  friend ostream& operator<< (ostream& os, IndexRotor& r) {
-    os << r.wiringnum << (r.reversed ? 'R' : 'N');
-    return os;
-  }
-  
-  int wiringnum;
-  
-private:
-  static array<int, 10> str2wiring(int num)
-  {
-    if (num <0 || num > wiring_strs.size())
-      num=0;
-    array<int, 10> wiring;
-    for (int i=0; i<10; ++i)
-      wiring[i] = wiring_strs[num][i] - '0';
-    return wiring;
-  }
-};  // class IndexRotor
-    
 /// The cryptological elements of an ECM Mark II machine
 class Sigaba {
 public:
@@ -219,17 +163,24 @@ public:
                                ///< where n is rotor number & r="R" for reversed
          MachineType machine = CSP889  /// Machine type (CSP889, CSP2900 or CSPNONE)
          ) : machine(machine){
+    if (!initialized) {
+      for (int i=0; i<10; ++i) {
+        for (int j=0; j<26; ++j)
+          right_wiring[i][left_wiring[i][j]] = j;
+      }
+      initialized = true;
+    }
     for (int i=0; i<5; ++i) {
       int num = cipher_str[2*i]-'0';
-      cipher_rotors.push_back(BigRotor(num, cipher_str[2*i+1]=='R'));
+      cipher_rotors.push_back(Rotor<26>(left_wiring[num], right_wiring[num], cipher_str[2*i+1]=='R', num));
     }
     for (int i=0; i<5; ++i) {
       int num = control_str[2*i]-'0';
-      control_rotors.push_back(BigRotor(num, control_str[2*i+1]=='R'));
+      control_rotors.push_back(Rotor<26>(left_wiring[num], right_wiring[num], control_str[2*i+1]=='R', num));
     }
     for (int i=0; i<5; ++i) {
       int num = index_str[2*i]-'0';
-      index_rotors.push_back(IndexRotor(num, cipher_str[2*i+1]=='R'));
+      index_rotors.push_back(Rotor<10>(index_wiring[num], index_wiring[num], cipher_str[2*i+1]=='R', num));
     }
 
   }
@@ -512,11 +463,16 @@ private:
     return c;
   }
   
-  
+public:
+  static const array< array<int, 26>, 10> left_wiring;
+  static array< array<int, 26> ,10> right_wiring;
+  static const array< array<int, 10>, 5> index_wiring;
+
 private:
-  vector<BigRotor> cipher_rotors;
-  vector<BigRotor> control_rotors;
-  vector<IndexRotor> index_rotors;
+  vector<Rotor<26> > cipher_rotors;
+  vector<Rotor<26> > control_rotors;
+  vector<Rotor<10> > index_rotors;
+  static bool initialized;
   static const array<int,26> control_index_889;
   static const array<int,26> control_index_2900;
   static const array<int,10> index_mag;
