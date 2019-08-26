@@ -79,7 +79,7 @@ public:
 private:
   vector<int> str2vector(string str, char base) {
     vector<int> izero(str.length());
-    for (int i=0; i<str.length(); ++i)
+    for (int i=0; i<static_cast<int>(str.length()); ++i)
       izero[i] = static_cast<int>(str[i]-base);
     return izero;
   }

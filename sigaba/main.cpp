@@ -268,7 +268,7 @@ int main(int argc, const char* const argv[]) {
     int width = 70;
     // Never break groups when grouping
     int line_length = (n+1)*(width/(n+1));
-    for (int i =0; i<result.length(); i+=line_length)
+    for (int i =0; i<static_cast<int>(result.length()); i+=line_length)
       cout << result.substr(i, line_length) << endl;
   } else { // decrypt
     // break lines at word boundaries
