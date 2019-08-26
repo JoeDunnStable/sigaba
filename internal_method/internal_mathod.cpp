@@ -75,7 +75,7 @@ int main(int argc, const char * argv[]) {
   variables_map vm;
   try {
   store(parse_command_line(argc, argv, desc), vm);
-  } catch(std::exception e) {
+  } catch(std::exception& e) {
     cout << "Unable to parse command line arguments" << endl;
     cout << desc << endl;
     return 1;

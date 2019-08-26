@@ -59,7 +59,7 @@ public:
   
   /// transfer results to an ostream
   friend ostream& operator<< (ostream& os, Checker chk) {
-    for (int i=0; i<chk.diff_used.size(); ++i) {
+    for (int i=0; i<static_cast<int>(chk.diff_used.size()); ++i) {
       if (chk.diff_used[i] != 1)
         os << "// diff " << i << " used " << chk.diff_used[i] << " times." << endl;
     }
@@ -172,7 +172,7 @@ public:
       }
       // Get rid of incosistent ones
       available.at(j+1).clear();
-      for (int k =0; k<availablejp1.size(); ++k) {
+      for (int k =0; k<static_cast<int>(availablejp1.size()); ++k) {
         bool okay_k = true;
         for (int l=0; l<=j; ++l) {
           if ((chosen.at(l) +l - availablejp1.at(k) -j-1) % size == 0) {

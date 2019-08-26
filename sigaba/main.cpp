@@ -260,7 +260,7 @@ int main(int argc, const char* const argv[]) {
     result = sigaba.cycle(input_text, direction);
   }
   
-  // post process the prettify the output
+  // post process to prettify the output
   if (direction==Sigaba::ENCRYPT) {
     int n = 5;
     result = group_text(result, n);

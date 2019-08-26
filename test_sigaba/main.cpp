@@ -67,7 +67,7 @@ int main(int argc, const char * argv[]) {
   
   
   // first check the wiring
-  for (int i=0; i<Sigaba::left_wiring.size(); ++i) {
+  for (int i=0; i<static_cast<int>(Sigaba::left_wiring.size()); ++i) {
     vector<int> wiring(26);
     for (int j=0; j<26; ++j)
       wiring.at(j)= Sigaba::left_wiring.at(i).at(j);
@@ -75,7 +75,7 @@ int main(int argc, const char * argv[]) {
     cout << setw(12) << "Big Rotor " << setw(3) << i << ": " << endl
     << chk;
   }
-  for (int i=0; i<Sigaba::index_wiring.size(); ++i) {
+  for (int i=0; i<static_cast<int>(Sigaba::index_wiring.size()); ++i) {
     vector<int> wiring(10);
     for (int j=0; j<10; ++j)
       wiring.at(j) = Sigaba::index_wiring.at(i).at(j);
@@ -110,7 +110,7 @@ int main(int argc, const char * argv[]) {
   }
   string str="HELLOWORLD";
   string out;
-  for (int i=0; i<str.size(); ++i) {
+  for (int i=0; i<static_cast<int>(str.size()); ++i) {
     out +=sig.cycle(str.substr(i,1), Sigaba::ENCRYPT);
     if (sig.get_cipher_pos() != test_cipher_pos[i+1]) {
       cout << "cipher_pos(" << i << ") = "<< sig.get_cipher_pos() << " != " << test_cipher_pos[i+1] << endl;

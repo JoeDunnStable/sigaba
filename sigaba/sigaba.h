@@ -94,8 +94,8 @@ template<int N>
 class Rotor {
 public:
   /// constructor given wiring array and orientation
-  Rotor(const array<int, N>& left_wiring,
-        const array<int, N>& right_wiring,///< wiring array N int from 0-N
+  Rotor(const array<int, N>& left_wiring, ///< wiring array: N int from 0-N
+        const array<int, N>& right_wiring,///< inverse of left wiring array
         bool reversed,           ///< is rotor reversed
         int wiring_num           ///< wiring number for display
         ) :
@@ -270,7 +270,7 @@ public:
   {
     string str = filter_in(direction, str_in);
     string out;
-    for (int i=0; i<str.size(); ++i) {
+    for (int i=0; i<static_cast<int>(str.size()); ++i) {
       int in = str[i]-'A';
       out.push_back(cipher_path(direction, in) +'A');
       step_cipher_rotors();
@@ -349,7 +349,6 @@ private:
         // decipher
         // ignore spaces
         if (c!=' ') {
-          // Convert Z to Space.
           out.push_back(c);
         }
       }   // end of decipher
@@ -363,6 +362,7 @@ private:
       out = str;
     else {
       for (auto itr=str.begin(); itr < str.end(); itr++) {
+        // Convert Z to space
         out.push_back((*itr == 'Z') ? ' ' : *itr);
       }
     }
