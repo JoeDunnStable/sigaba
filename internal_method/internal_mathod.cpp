@@ -58,14 +58,20 @@ using std::chrono::system_clock;
 using std::time_t;
 
 #include <boost/program_options.hpp>
+
+#include <boost/filesystem.hpp>
+using boost::filesystem::path;
+
 #include "internal_method.h"
 
 
 int main(int argc, const char * argv[]) {
+  path p{argv[0]};
+  string program_name = p.filename().string();
   using namespace boost::program_options;
   int size, n;
   
-  options_description desc{"Generate wiring using the internal method"};
+  options_description desc{program_name + ": Generate wiring using the internal method"};
   
   desc.add_options()
   ("help,h", "display help message")
@@ -76,7 +82,7 @@ int main(int argc, const char * argv[]) {
   try {
   store(parse_command_line(argc, argv, desc), vm);
   } catch(std::exception& e) {
-    cout << "Unable to parse command line arguments" << endl;
+    cout << program_name << ": Unable to parse command line arguments" << endl;
     cout << desc << endl;
     return 1;
   }
@@ -89,21 +95,28 @@ int main(int argc, const char * argv[]) {
   
   if (vm.count("size")) {
     if (size < 0) {
-      cout << "size must be a positive integer" << endl;
+      cout << program_name << ": size must be a positive integer" << endl;
       return 1;
     }
   } else {
-    cout << "the size option is required" << endl;
+    cout << program_name << ": the size option is required" << endl;
     return 1;
   }
   
   if (n < 1) {
-    cout << "the number of rotors to generate must be >=1" << endl;
+    cout << program_name << ": the number of rotors to generate must be >=1" << endl;
   }
   
   ostringstream file_ss;
   system_clock::time_point now = system_clock::now();
   time_t now_c = system_clock::to_time_t(now);
+  path out_dir{"../output"};
+  if (!is_directory(out_dir)) {
+    if (!create_directory(out_dir)) {
+      cout << program_name << ": unable to create output directory ../output" << endl;
+      return 1;
+    }
+  }
   file_ss << "../output/rotor_wiring_" << size << "_" << n
           << put_time(localtime(&now_c),"_%Y%m%d_%H%M") << ".txt";
 

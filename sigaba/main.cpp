@@ -41,6 +41,9 @@ using std::exception;
 
 #include <boost/program_options.hpp>
 
+#include <boost/filesystem.hpp>
+using boost::filesystem::path;
+
 #include "sigaba.h"
 
 ///Groups the given text into n-letter groups separated by spaces.
@@ -161,6 +164,9 @@ bool validate_pos(string cipherPos, string controlPos, string indexPos) {
 
 /// Entry point for the command-line ECM Mark II (Sigaba) simulation.
 int main(int argc, const char* const argv[]) {
+  path p(argv[0]);
+  string program_name = p.filename().string();
+
   using namespace boost::program_options;
   bool encrypt{false}, decrypt{false}, trace(false);
   string cipherOrder, controlOrder, indexOrder;
@@ -170,7 +176,7 @@ int main(int argc, const char* const argv[]) {
   string input_text, input_file;
   
   
-  options_description desc{"ECM Mark II cipher machine simulation"};
+  options_description desc{program_name + ": ECM Mark II cipher machine simulation"};
   
   desc.add_options()
   ("help,h", "display help message")
@@ -198,14 +204,24 @@ int main(int argc, const char* const argv[]) {
   }
 
   if (!decrypt && !encrypt) {
-    cout << "Specify encrypt or decrypt" << endl;
+    cout << program_name << ": " << "Specify encrypt or decrypt" << endl;
     return 1;
   }
-  if (encrypt && decrypt)
-    cout << "Supply either -e or -d, not both" << endl;
+  if (encrypt && decrypt) {
+    cout << program_name << ": " << "Supply either -e or -d, not both" << endl;
+    return 1;
+  }
   Sigaba::Direction direction = encrypt ? Sigaba::ENCRYPT : Sigaba::DECRYPT;
-  if (vm.count("text") && vm.count("input"))
-    cout << "Supply either -t or -i, not both" << endl;
+
+  if (!vm.count("text") && !vm.count("input")) {
+    cout << program_name << ": " << "Supply either -t or -i" << endl;
+    return 1;
+  }
+  
+  if (vm.count("text") && vm.count("input")) {
+    cout << program_name << ": " << "Supply either -t or -i, not both" << endl;
+    return 1;
+  }
   
   Sigaba::MachineType machine = Sigaba::CSP889;
   if (!vm.count("machine")) {
@@ -216,7 +232,7 @@ int main(int argc, const char* const argv[]) {
     else if (machine_str == "CSPNONE")
       machine = Sigaba::CSPNONE;
     else {
-      cout << "Invalid machine type: " + machine_str << endl;
+      cout << program_name << ": " << "Invalid machine type: " + machine_str << endl;
       return 1;
     }
   }
@@ -244,8 +260,14 @@ int main(int argc, const char* const argv[]) {
   
   ifstream f_in;
   bool file_in = (vm.count("input"));
-  if (file_in)
+  if (file_in) {
     f_in.open(input_file);
+    if (!f_in) {
+      cout << program_name << ": unable to open file " + input_file << endl;
+      return 1;
+    }
+    
+  }
   
   string str_in, result;
   if(file_in) {

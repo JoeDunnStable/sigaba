@@ -121,12 +121,70 @@ int main(int argc, const char * argv[]) {
   }
   
   sig.zeroize();
-  string str2 = sig.cycle(out, Sigaba::DECRYPT);
+  string str_out = sig.cycle(out, Sigaba::DECRYPT);
   cout << str << endl;
   cout << out << endl;
-  cout << str2 << endl;
+  cout << str_out << endl;
   
-  return 0;
+  // compare results to those from the Java simulator
+  
+  int ret = 0;
+  
+  string default_cipherOrder = "0N1N2N3N4N";
+  string default_controlOrder = "5N6N7N8N9N";
+  string default_indexOrder = "0N1N2N3N4N";
+  {// CSP889  HELLO WORLD => FLqGF QUEQC H
+    Sigaba tst(default_cipherOrder, default_controlOrder, default_indexOrder);
+    tst.zeroize();
+    string str = tst.cycle("HELLO WORLD", Sigaba::ENCRYPT);
+    if (str != "FLQGFQUEQCH") {
+      cout << "Failure in tst1" << endl;
+      cout << str << " != " << "FLMGUIGFVWW" << endl;
+      ret = 1;
+    }
+  }
+  {
+  // CSP2900 HELLO WORLD => FLMGU IGFVW W
+    Sigaba tst(default_cipherOrder, default_controlOrder, default_indexOrder, Sigaba::CSP2900);
+    tst.zeroize();
+    string str = tst.cycle("HELLO WORLD", Sigaba::ENCRYPT);
+    if (str != "FLMGUIGFVWW") {
+      cout << "Failure in tst2" << endl;
+      cout << str << " != " << "FLMGUIGFVWW" << endl;
+      ret = 1;
+    }
+  }
+  {
+  // CSP889 --navyInit -controlOrder ABCDE HELLO WORLD => COTUC RAXLV I
+    Sigaba tst(default_cipherOrder, default_controlOrder, default_indexOrder);
+    string target = "COTUCRAXLVI";
+    tst.zeroize();
+    tst.navy_init("ABCDE");
+    string str = tst.cycle("HELLO WORLD", Sigaba::ENCRYPT);
+    if (str != target) {
+      cout << "Failure in tst3" << endl;
+      cout << str << " != " << target << endl;
+      ret = 1;
+    }
+
+  }
+  {
+  // CSP889 --cipherOrder ABCDE --controlOrder ABCDE HELLO WORLD => PHXZJ OJXYV A
+    Sigaba tst(default_cipherOrder, default_controlOrder, default_indexOrder);
+    string target = "PHXZJOJXYVA";
+    tst.zeroize();
+    tst.set_cipher_pos("ABCDE");
+    tst.set_control_pos("ABCDE");
+    string str = tst.cycle("HELLO WORLD", Sigaba::ENCRYPT);
+    if (str != target) {
+      cout << "Failure in tst4" << endl;
+      cout << str << " != " << target << endl;
+      ret = 1;
+    }
+    
+  }
+  
+  return ret;
 }
 
 
