@@ -1,5 +1,5 @@
 project('sigaba', 'cpp', default_options : ['cpp_std=c++11'],
-         version : '1.2.4')
+         version : '1.3')
 
 compiler=meson.get_compiler('cpp').get_id()
 

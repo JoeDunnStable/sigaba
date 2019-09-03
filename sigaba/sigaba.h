@@ -152,7 +152,7 @@ private:
 class Sigaba {
 public:
   enum Direction {ENCRYPT =0, DECRYPT =1};
-  enum MachineType {CSP889=1, CSP2900=2, CSPNONE=3};
+  enum MachineType {CSP889=0, CSPNONE=1, CSP2900=2 };
   
   /// construct a machine with the indicated rotors and orientation
   Sigaba(string cipher_str,    ///< Five cipher rotors of form "nrnrnrnrnr" ,
@@ -189,6 +189,43 @@ public:
     set_cipher_pos("OOOOO");
     set_control_pos("OOOOO");
   }
+  
+  /// rotate cipher and control rotor 1 position until they're zero
+  void Z_cycle() {
+    for (int i=0; i<5; ++i){
+      if (cipher_rotors.at(i).pos != 14)
+        cipher_rotors.at(i).rotate(1);
+      if (control_rotors.at(i).pos != 14)
+        control_rotors.at(i).rotate(1);
+    }
+    
+  }
+  
+  
+  /// ctl_cycle is used when zeroize is off and master switch is in R position
+  /// it steps the cipher rotors  & rotates the control rotor indicated by key
+  /// returns the increment to the counter.
+  void ctl_cycle (string key) {
+    // The doc indicates that nothing should happen here, but Blank moves the
+    // cipher rotors, this is a quirk, not a feature of the real hardware.
+    if (key == "Blank"){
+      // Rotate 1 to 4 cipher rotors.
+      step_cipher_rotors();
+      return;
+    }
+    // The 1-5 keys work in R position
+    size_t j = string("12345").find(key);
+    if ( j != string::npos) {
+      // Rotate 1 to 4 cipher rotors.
+      step_cipher_rotors();
+      // change the position of a control rotor
+      control_rotors.at(j).rotate(1);
+    }
+    
+    // Keys other than 1-5 and Blank do nothing
+    return;
+  }
+
  
  /// set the cipher position
  void set_cipher_pos(string cipher_pos  ///< positon string of five from A-Z
@@ -249,6 +286,11 @@ public:
       out.push_back(index_rotors[i].pos + '0');
     }
     return out;
+  }
+  
+  /// set the machine type.  Used if machine switch is moved after setup
+  void set_machine_type(MachineType new_type) {
+    machine = new_type;
   }
   
   string get_machine_type() {

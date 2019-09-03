@@ -224,7 +224,7 @@ int main(int argc, const char* const argv[]) {
   }
   
   Sigaba::MachineType machine = Sigaba::CSP889;
-  if (!vm.count("machine")) {
+  if (vm.count("machine")) {
     if (machine_str == "CSP889")
       machine = Sigaba::CSP889;
     else if (machine_str == "CSP2900")
@@ -242,7 +242,6 @@ int main(int argc, const char* const argv[]) {
   
   // Create sigaba cipher machine object
   Sigaba sigaba(cipherOrder, controlOrder, indexOrder, machine);
-  
   if (trace)
     sigaba.start_trace();
    
